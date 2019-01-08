@@ -5,9 +5,13 @@
  */
 package lendle.courses.wp.finalexam_wp;
 
+import java.awt.BorderLayout;
 import javax.swing.DefaultListModel;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -106,7 +110,13 @@ public class Main extends javax.swing.JFrame {
         DefaultListModel model = (DefaultListModel) this.jList1.getModel();
         if (model.contains(title)) {
             //Q1: 開啟 message dialog （10%）
-            
+          initComponents();
+            JDesktopPane jDesktopPane=new JDesktopPane();
+            this.setContentPane(jDesktopPane);
+            JInternalFrame internalFrame1=new JInternalFrame("Internal Frame 1");
+            internalFrame1.setSize(300, 300);
+            internalFrame1.setVisible(true);
+            this.add(internalFrame1);
             ////////////////////
             return;
         }
@@ -114,6 +124,18 @@ public class Main extends javax.swing.JFrame {
         model.addElement(title);
         //Q2: 建立 TaskFrame（等同於 JInternalFrame）
         //加到 jDesktopPane1 (20%)
+            JFrame frame=new JFrame();
+            frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            frame.setSize(500,500);
+            frame.setLayout(new BorderLayout());
+            
+            JDesktopPane desktopPane1=new JDesktopPane();
+            frame.setContentPane(desktopPane1);
+            JInternalFrame internalFrame= new JInternalFrame("internalframe1",true,true,true,true);
+            internalFrame.setSize(300, 300);
+            internalFrame.setVisible(true);
+            frame.add(internalFrame);
+            
         
         ///////////////////////////////////////
     }//GEN-LAST:event_buttonNewActionPerformed
