@@ -155,7 +155,17 @@ public class Main extends javax.swing.JFrame {
             //Q3: 建立 TaskFrame（等同於 JInternalFrame）
             //設定 noteTitle, noteContent
             //加到 jDesktopPane1 (20%)
+            JFrame frame=new JFrame();
+            frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            frame.setSize(500,500);
+            frame.setLayout(new BorderLayout());
             
+            JDesktopPane desktopPane1=new JDesktopPane();
+            frame.setContentPane(desktopPane1);
+            JInternalFrame internalFrame= new JInternalFrame("internalframe1",true,true,true,true);
+            internalFrame.setSize(300, 300);
+            internalFrame.setVisible(true);
+            frame.add(internalFrame);
             //////////////////////////////////////////
         }
     }//GEN-LAST:event_jList1MouseClicked
